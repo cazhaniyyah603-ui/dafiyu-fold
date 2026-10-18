@@ -31,15 +31,18 @@
 
 ## 安装
 
-把它放进你自己的插件目录，然后在 profile 的 `package.json` 里加上 link 依赖：
+**一键从 GitHub 装**（DSH 0.2.0 实测可用，8 秒装完 `v1.0.0`）：
 
-```json
-{
-  "dependencies": {
-    "dafiyu-fold": "link:/绝对路径/到/dafiyu-fold"
-  }
-}
+```bash
+dsh plugin --profile desktop add github:cazhaniyyah603-ui/dafiyu-fold
 ```
+
+装完还要做两件事，缺一样它都不会干活：
+
+1. 把 `dafiyu-fold` 加进 profile 的 `package.json` → `dsh.profile.bundles` 数组；
+2. 在 `cordis.patch.yml` 里把 `- id: dafiyu-fold` 那一行写进 **compaction 分组内**（见下一节，这条最容易错）。
+
+也可以手动装：把仓库目录放进插件目录，然后在 profile 的 `package.json` 的 `dependencies` 里写 `"dafiyu-fold": "link:/绝对路径/到/dafiyu-fold"`。
 
 ## ⚠️ 关键一步：必须放进 compaction 分组
 
