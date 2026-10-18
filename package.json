@@ -1,0 +1,32 @@
+{
+  "name": "dafiyu-fold",
+  "version": "1.0.0",
+  "description": "Archive the original context before DSH compaction replaces it with a summary. Wraps the official summarize() without touching the engine.",
+  "private": false,
+  "type": "module",
+  "license": "MIT",
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "compaction",
+    "context",
+    "archive"
+  ],
+  "exports": {
+    ".": "./lib/index.js"
+  },
+  "files": [
+    "lib/index.js",
+    "cordis.patch.yml",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  }
+}

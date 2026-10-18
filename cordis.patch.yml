@@ -1,0 +1,7 @@
+# Bundle patch for dafiyu-fold.
+#
+# 只声明"我是一个 bundle"，**不在这里插入任何行**。
+# 原因：折叠服务在 isolate 分组里（见 README「关键一步」），
+# bundle 层的插入会落在组外面，永远 inject 不到 compaction。
+# 所以真正的插入行必须由使用者写进 profile 的 compaction 分组里。
+[]
